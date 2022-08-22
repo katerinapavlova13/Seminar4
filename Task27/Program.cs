@@ -8,10 +8,15 @@
 Console.Write("Введите число: ");
 int number = Convert.ToInt32(Console.ReadLine());
 
-int sum = 0;
-while (number > 0)
+int SumNumber(int num)
 {
-    sum = sum + number % 10;
-    number = number / 10;
+    int sum = 0;
+    for (int i = 0; i <= num; i++)
+    {
+        sum = sum + num % 10;
+        num = num / 10;
+    }
+    return sum;
 }
-Console.Write(sum);
+int result = SumNumber(number);
+Console.Write($"Сумма цифр числа:{number} -> {result}");
